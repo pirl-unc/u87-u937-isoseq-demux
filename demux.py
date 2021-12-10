@@ -171,8 +171,6 @@ def load_fastq_and_demux(
         print("Loading %s..." % input_filename)
         fastq_gen = read_fastq(input_filename)
         for (desc, seq, quals) in fastq_gen:
-            sample = None
-            direction = None
             barcode_5p = seq[:five_prime_length]
 
             sample = info.barcode_to_sample.get(barcode_5p)
